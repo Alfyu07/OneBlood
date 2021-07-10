@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:oneblood/presentation/shared/shared.dart';
 import 'package:oneblood/presentation/widgets/widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'dart:math';
 part 'sign_in_page.dart';
 part 'register_page.dart';
 part 'email_verification_page.dart';

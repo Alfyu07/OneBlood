@@ -6,8 +6,8 @@ Color blackColor = const Color(0xff000000);
 Color successColor = const Color(0xff36D860);
 Color dangerColor = const Color(0xffD83636);
 
-final text24 = TextStyle(fontSize: 24);
-final text18 = TextStyle(fontSize: 18);
-final text16 = TextStyle(fontSize: 16);
-final text14 = TextStyle(fontSize: 14);
-final text13 = TextStyle(fontSize: 13);
+TextStyle text24 = const TextStyle(fontSize: 24);
+TextStyle text18 = const TextStyle(fontSize: 18);
+TextStyle text16 = const TextStyle(fontSize: 16);
+TextStyle text14 = const TextStyle(fontSize: 14);
+TextStyle text13 = const TextStyle(fontSize: 13);

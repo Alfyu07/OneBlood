@@ -87,7 +87,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     //TODO request ke Api
     final bool valid = random.nextBool();
     if (valid) {
-      Navigator.of(context).push(
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (BuildContext context) => const HomePage()),
       );
     } else {
