@@ -14,8 +14,8 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-  bool passwordObscure = false;
-  bool confirmPasswordObscure = false;
+  bool passwordObscure = true;
+  bool confirmPasswordObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +69,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   onPressed: () =>
                       setState(() => passwordObscure = !passwordObscure),
                   icon: passwordObscure
-                      ? const Icon(Icons.visibility)
-                      : const Icon(Icons.visibility_off),
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
                 ),
               ),
               const SizedBox(height: 26),
@@ -84,13 +84,27 @@ class _RegisterPageState extends State<RegisterPage> {
                   onPressed: () => setState(
                       () => confirmPasswordObscure = !confirmPasswordObscure),
                   icon: confirmPasswordObscure
-                      ? const Icon(Icons.visibility)
-                      : const Icon(Icons.visibility_off),
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
                 ),
               ),
               const SizedBox(height: 40),
               CustomPrimaryButton(
-                onPressed: () {},
+                onPressed: () async {
+                  final OkCancelResult result = await showOkCancelAlertDialog(
+                    context: context,
+                    message:
+                        "Are you sure you have filled in your personal data correctly?",
+                    okLabel: 'Yes',
+                    cancelLabel: 'No',
+                    isDestructiveAction: true,
+                  );
+                  if (result == OkCancelResult.ok) {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const EmailVerificationPage()));
+                  } else {}
+                },
                 margin: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
                   'Register',

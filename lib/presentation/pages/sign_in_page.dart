@@ -12,6 +12,8 @@ class _SignInPageState extends State<SignInPage> {
 
   TextEditingController passwordController = TextEditingController();
 
+  bool passwordObscure = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,15 @@ class _SignInPageState extends State<SignInPage> {
               CustomTextField(
                 controller: passwordController,
                 hintText: 'Password',
+                obscureText: passwordObscure,
                 prefixIcon: const Icon(Icons.lock),
+                suffixIcon: IconButton(
+                  onPressed: () =>
+                      setState(() => passwordObscure = !passwordObscure),
+                  icon: passwordObscure
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
+                ),
                 margin: const EdgeInsets.symmetric(horizontal: 40),
               ),
               const SizedBox(height: 18),
@@ -61,6 +71,13 @@ class _SignInPageState extends State<SignInPage> {
               ),
               const SizedBox(height: 40),
               buildCustomDivider(),
+              const SizedBox(height: 30),
+              Center(
+                child: Text(
+                  'Login with',
+                  style: TextStyle(color: blackColor.withOpacity(0.5)),
+                ),
+              ),
               const SizedBox(height: 20),
               // !Login with google
               CustomSecondaryButton(
@@ -68,6 +85,7 @@ class _SignInPageState extends State<SignInPage> {
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Image.asset('assets/google.png'),
               ),
+              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -86,7 +104,7 @@ class _SignInPageState extends State<SignInPage> {
             ),
           ),
           Text(
-            "   or   ",
+            "     or     ",
             style: TextStyle(
               color: Colors.black.withOpacity(0.5),
             ),
