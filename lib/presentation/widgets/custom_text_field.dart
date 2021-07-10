@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final bool obscureText;
 
   const CustomTextField({
     Key? key,
@@ -16,6 +17,7 @@ class CustomTextField extends StatelessWidget {
     this.hintText,
     this.suffixIcon,
     this.margin = EdgeInsets.zero,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -24,6 +26,7 @@ class CustomTextField extends StatelessWidget {
       height: height,
       margin: margin,
       child: TextFormField(
+        obscureText: obscureText,
         textAlignVertical: TextAlignVertical.center,
         controller: controller,
         decoration: InputDecoration(
@@ -45,7 +48,8 @@ class CustomTextField extends StatelessWidget {
           hintStyle: TextStyle(
             color: Colors.black.withOpacity(0.2),
           ),
-          contentPadding: const EdgeInsets.only(top: 20),
+          contentPadding:
+              EdgeInsets.only(top: 20, left: (prefixIcon == null) ? 20 : 0),
         ),
       ),
     );

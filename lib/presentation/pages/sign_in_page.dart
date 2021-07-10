@@ -24,6 +24,7 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 117),
               Center(child: Text('Welcome!', style: text24)),
               const SizedBox(height: 18),
+              // !Username textfield
               CustomTextField(
                 controller: usernameController,
                 hintText: 'Username',
@@ -31,6 +32,7 @@ class _SignInPageState extends State<SignInPage> {
                 margin: const EdgeInsets.symmetric(horizontal: 40),
               ),
               const SizedBox(height: 28),
+              // !Password textfield
               CustomTextField(
                 controller: passwordController,
                 hintText: 'Password',
@@ -50,18 +52,22 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 24),
               // !Register Buton
               CustomSecondaryButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => const RegisterPage()));
+                },
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Text('Register', style: text14),
               ),
               const SizedBox(height: 40),
               buildCustomDivider(),
               const SizedBox(height: 20),
+              // !Login with google
               CustomSecondaryButton(
                 onPressed: () {},
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Image.asset('assets/google.png'),
-              )
+              ),
             ],
           ),
         ),
@@ -106,72 +112,6 @@ class _SignInPageState extends State<SignInPage> {
             color: blackColor.withOpacity(0.5),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget buildLoginButton() {
-    return Container(
-      width: double.infinity,
-      height: 46,
-      margin: const EdgeInsets.symmetric(horizontal: 40),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          primary: pinkColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        child: Text(
-          'Login',
-          style: text14.copyWith(
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildRegisterButton() {
-    return Container(
-      width: double.infinity,
-      height: 46,
-      margin: const EdgeInsets.symmetric(horizontal: 40),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          side: BorderSide(color: pinkColor),
-          primary: Colors.white,
-          onPrimary: pinkColor,
-        ),
-        child: Text('Register', style: text14),
-      ),
-    );
-  }
-
-  Widget buildLoginWithGoogleButton() {
-    return Container(
-      width: double.infinity,
-      height: 46,
-      margin: const EdgeInsets.symmetric(horizontal: 40),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          side: BorderSide(color: pinkColor),
-          primary: Colors.white,
-          onPrimary: pinkColor,
-        ),
-        child: Text('Register', style: text14),
       ),
     );
   }
