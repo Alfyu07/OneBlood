@@ -17,7 +17,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
         elevation: 0,
         backgroundColor: whiteColor,
         leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Get.back(),
           icon: Icon(
             Icons.arrow_back,
             color: blackColor,
@@ -42,6 +42,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
                 PinCodeTextField(
                   appContext: context,
                   controller: emailVerifController,
+                  keyboardType: TextInputType.number,
                   length: 6,
                   mainAxisAlignment: MainAxisAlignment.center,
                   onChanged: (value) => emailVerifController.text = value,
@@ -87,9 +88,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     //TODO request ke Api
     final bool valid = random.nextBool();
     if (valid) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => const HomePage()),
-      );
+      Get.to(const HomePage());
     } else {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

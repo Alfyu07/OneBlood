@@ -26,7 +26,9 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  get: ^4.1.4
   google_fonts: ^2.1.0
+  introduction_screen: ^2.1.0
   lint: ^1.5.3
   pin_code_fields: ^7.2.0
 

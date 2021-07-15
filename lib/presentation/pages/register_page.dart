@@ -25,7 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
         elevation: 0,
         backgroundColor: whiteColor,
         leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Get.back(),
           icon: Icon(
             Icons.arrow_back,
             color: blackColor,
@@ -100,9 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     isDestructiveAction: true,
                   );
                   if (result == OkCancelResult.ok) {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            const EmailVerificationPage()));
+                    Get.to(const EmailVerificationPage());
                   } else {}
                 },
                 margin: const EdgeInsets.symmetric(horizontal: 40),

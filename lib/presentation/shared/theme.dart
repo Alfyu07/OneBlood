@@ -2,7 +2,10 @@ part of 'shared.dart';
 
 Color whiteColor = const Color(0xffFFFFFF);
 Color pinkColor = const Color(0xffF09898);
+Color bgColor = const Color(0xffEDEDED);
+
 Color blackColor = const Color(0xff000000);
+Color grayColor = const Color(0xffA4A4A4);
 Color successColor = const Color(0xff36D860);
 Color dangerColor = const Color(0xffD83636);
 

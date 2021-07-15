@@ -63,8 +63,7 @@ class _SignInPageState extends State<SignInPage> {
               // !Register Buton
               CustomSecondaryButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => const RegisterPage()));
+                  Get.to(const RegisterPage());
                 },
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Text('Register', style: text14),
