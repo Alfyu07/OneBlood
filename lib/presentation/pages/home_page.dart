@@ -1,93 +1,118 @@
 part of 'pages.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  TextEditingController searchController = TextEditingController();
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 36,
-                    height: 36,
-                    child: CircleAvatar(
-                      backgroundColor: grayColor,
-                      backgroundImage: const NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/220px-Pierre-Person.jpg'),
-                    ),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SafeArea(child: SizedBox(height: 40)),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: edge),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 36,
+                  height: 36,
+                  child: CircleAvatar(
+                    backgroundColor: grayColor,
+                    backgroundImage: const NetworkImage(
+                        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/220px-Pierre-Person.jpg'),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: const Icon(Icons.notifications_outlined),
-                  )
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: const Icon(Icons.notifications_outlined),
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 40),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: edge),
+            child: Text(
+              'One Blood',
+              style: blackTextStyle.copyWith(fontSize: 24),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: edge),
+            child: Text(
+              'Permintaan Darah',
+              style: blackTextStyle.copyWith(fontSize: 14),
+            ),
+          ),
+          const SizedBox(height: 20),
+          //* NOTE : SEARCH
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: edge),
+            child: Row(
+              children: [
+                Expanded(
+                  child: CupertinoSearchTextField(
+                    placeholder: 'Pencarian',
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: bgColor,
+                    ),
+                    prefixInsets: const EdgeInsets.only(left: 10),
+                    onChanged: (value) {},
+                    onSubmitted: (value) {},
+                  ),
+                ),
+                const SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 36,
+                    width: 41,
+                    margin: const EdgeInsets.only(left: 16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: bgColor,
+                    ),
+                    child: const Icon(Icons.sort),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 24),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  DonorListItem(
+                    request: mockDonorRequest[0],
+                  ),
+                  const SizedBox(height: 16),
+                  DonorListItem(request: mockDonorRequest[1]),
+                  const SizedBox(height: 16),
+                  DonorListItem(request: mockDonorRequest[2]),
+                  const SizedBox(height: 16),
+                  DonorListItem(request: mockDonorRequest[3]),
                 ],
               ),
-              const SizedBox(height: 40),
-              Text(
-                'One Blood',
-                style: text24.copyWith(fontWeight: FontWeight.w600),
-              ),
-              Text(
-                'Permintaan Darah',
-                style: text14.copyWith(fontWeight: FontWeight.w400),
-              ),
-              const SizedBox(height: 20),
-              //! Search
-              buildSearch(),
-              const SizedBox(height: 20),
-              Container(
-                color: bgColor,
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildSearch() {
-    return Row(
-      children: [
-        Expanded(
-          child: CupertinoSearchTextField(
-            placeholder: 'Pencarian',
-            backgroundColor: bgColor,
-            prefixInsets: const EdgeInsets.only(left: 10),
-            onChanged: (value) {},
-            onSubmitted: (value) {},
-          ),
-        ),
-        const SizedBox(width: 8),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            height: 36,
-            width: 41,
-            margin: const EdgeInsets.symmetric(horizontal: 16),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: bgColor,
             ),
-            child: const Icon(Icons.sort),
           ),
-        ),
-        const SizedBox(height: 20),
-      ],
+          const SizedBox(height: 80),
+        ],
+      ),
     );
   }
 }

@@ -4,6 +4,7 @@ class DonorRequest extends Equatable {
   final int id;
   final User? user;
   final String? resipienName;
+  final String? resipienBloodType;
   final String? description;
   final String? date;
   final int? bloodNeeds;
@@ -12,10 +13,11 @@ class DonorRequest extends Equatable {
   const DonorRequest({
     required this.id,
     required this.user,
-    this.resipienName = "",
-    this.description = "",
-    this.date = "",
-    this.location = "",
+    this.resipienName,
+    this.resipienBloodType,
+    this.description,
+    this.date,
+    this.location,
     this.bloodNeeds = 0,
     this.bloodFullfilled = 0,
   });
@@ -29,6 +31,7 @@ class DonorRequest extends Equatable {
         location: data['location'] as String,
         bloodNeeds: data['bloodNeeds'] as int,
         bloodFullfilled: data['bloodFullfilled'] as int,
+        resipienBloodType: data['resipienBloodType'] as String,
       );
 
   @override
@@ -37,6 +40,7 @@ class DonorRequest extends Equatable {
         id,
         user,
         resipienName,
+        resipienBloodType,
         description,
         date,
         location,
@@ -55,6 +59,7 @@ final List<DonorRequest> mockDonorRequest = [
     description: "Untuk pengobatan keluarga saya",
     resipienName: "George",
     location: "RSUD Kota Mataram",
+    resipienBloodType: "O+",
   ),
   DonorRequest(
     id: 2,
@@ -65,6 +70,7 @@ final List<DonorRequest> mockDonorRequest = [
     description: "Untuk operasi",
     resipienName: "Fany",
     location: "RSUD Kota Mataram",
+    resipienBloodType: "A-",
   ),
   DonorRequest(
     id: 3,
@@ -75,6 +81,7 @@ final List<DonorRequest> mockDonorRequest = [
     description: "Untuk operasi",
     resipienName: "Walley",
     location: "RSUD Kota Mataram",
+    resipienBloodType: "AB+",
   ),
   DonorRequest(
     id: 4,
@@ -85,5 +92,6 @@ final List<DonorRequest> mockDonorRequest = [
     description: "Untuk operasi",
     resipienName: "Flowery",
     location: "RSUD Kota Mataram",
+    resipienBloodType: "B+",
   ),
 ];

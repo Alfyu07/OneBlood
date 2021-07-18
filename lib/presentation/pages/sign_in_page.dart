@@ -24,7 +24,12 @@ class _SignInPageState extends State<SignInPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 117),
-              Center(child: Text('Welcome!', style: text24)),
+              Center(
+                child: Text(
+                  'Welcome!',
+                  style: blackTextStyle.copyWith(fontSize: 24),
+                ),
+              ),
               const SizedBox(height: 18),
               // !Username textfield
               CustomTextField(
@@ -56,8 +61,7 @@ class _SignInPageState extends State<SignInPage> {
               CustomPrimaryButton(
                 onPressed: () {},
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
-                child:
-                    Text("Login", style: text14.copyWith(color: Colors.white)),
+                child: Text("Login", style: whiteTextStyle),
               ),
               const SizedBox(height: 24),
               // !Register Buton
@@ -66,16 +70,13 @@ class _SignInPageState extends State<SignInPage> {
                   Get.to(const RegisterPage());
                 },
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
-                child: Text('Register', style: text14),
+                child: Text('Register', style: pinkTextStyle),
               ),
               const SizedBox(height: 40),
               buildCustomDivider(),
               const SizedBox(height: 30),
               Center(
-                child: Text(
-                  'Login with',
-                  style: TextStyle(color: blackColor.withOpacity(0.5)),
-                ),
+                child: Text('Login with', style: greyTextStyle),
               ),
               const SizedBox(height: 20),
               // !Login with google
@@ -125,9 +126,7 @@ class _SignInPageState extends State<SignInPage> {
         onTap: () {},
         child: Text(
           'Forgot password?',
-          style: text14.copyWith(
-            color: blackColor.withOpacity(0.5),
-          ),
+          style: greyTextStyle,
         ),
       ),
     );

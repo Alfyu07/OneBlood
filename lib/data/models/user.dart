@@ -132,7 +132,7 @@ final List<User> mockUser = [
   const User(
     id: 4,
     username: "fauzyah",
-    name: "Fauziah Aulia Rachim",
+    name: "Salman Alfarisi",
     phoneNumber: "08123456789",
     address: "Kecamatan",
     bloodType: "A+",

@@ -23,8 +23,10 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
             color: blackColor,
           ),
         ),
-        title: Text('Email Verification',
-            style: text18.copyWith(color: blackColor)),
+        title: Text(
+          'Verifikasi Email',
+          style: blackTextStyle.copyWith(fontSize: 18),
+        ),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -33,10 +35,12 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
             child: Column(
               children: [
                 const SizedBox(height: 50),
-                const Center(
-                    child: Text('Please, Enter Your Verification Code')),
-                const Center(child: Text('We have sent code to your email:')),
-                const Center(child: Text('m**********ny@gmail.com')),
+                Center(
+                  child: Text(
+                    'Please, Enter Your Verification Code\nWe have sent code to your email:\nm**********ny@gmail.com',
+                    style: greyTextStyle,
+                  ),
+                ),
                 const SizedBox(height: 90),
                 //!Pin TextField
                 PinCodeTextField(
@@ -67,13 +71,9 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
                   style: TextButton.styleFrom(
                     primary: pinkColor,
                   ),
-                  child: const Text('Resend New Code'),
+                  child: const Text('Kirim ulang code'),
                 ),
                 const SizedBox(height: 40),
-                CustomPrimaryButton(
-                  onPressed: () {},
-                  child: const Text('Verify'),
-                )
               ],
             ),
           ),
@@ -88,7 +88,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     //TODO request ke Api
     final bool valid = random.nextBool();
     if (valid) {
-      Get.to(const HomePage());
+      Get.to(const MainPage());
     } else {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

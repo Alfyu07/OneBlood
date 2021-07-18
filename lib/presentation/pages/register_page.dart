@@ -31,7 +31,10 @@ class _RegisterPageState extends State<RegisterPage> {
             color: blackColor,
           ),
         ),
-        title: Text('Registration', style: text18.copyWith(color: blackColor)),
+        title: Text(
+          'Registration',
+          style: blackTextStyle.copyWith(fontSize: 18),
+        ),
       ),
       body: Form(
         child: SingleChildScrollView(
@@ -106,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 margin: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
                   'Register',
-                  style: text14.copyWith(color: whiteColor),
+                  style: whiteTextStyle,
                 ),
               ),
             ],
