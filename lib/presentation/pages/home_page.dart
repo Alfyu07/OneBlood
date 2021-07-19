@@ -92,20 +92,21 @@ class HomePage extends StatelessWidget {
                 topRight: Radius.circular(40),
               ),
             ),
+            // TODO : CEK apakah donor list kosong
+            //* column donor list
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  DonorListItem(
-                    request: mockDonorRequest[0],
-                  ),
-                  const SizedBox(height: 16),
-                  DonorListItem(request: mockDonorRequest[1]),
-                  const SizedBox(height: 16),
-                  DonorListItem(request: mockDonorRequest[2]),
-                  const SizedBox(height: 16),
-                  DonorListItem(request: mockDonorRequest[3]),
+                  for (DonorRequest e in mockDonorRequest)
+                    GestureDetector(
+                      onTap: () => Get.to(() => DonorRequestDetail(request: e)),
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 16),
+                        child: DonorListItem(request: e),
+                      ),
+                    ),
                 ],
               ),
             ),

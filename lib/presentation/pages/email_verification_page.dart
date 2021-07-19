@@ -88,7 +88,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     //TODO request ke Api
     final bool valid = random.nextBool();
     if (valid) {
-      Get.to(const MainPage());
+      Get.to(() => const MainPage());
     } else {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(

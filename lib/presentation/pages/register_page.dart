@@ -103,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     isDestructiveAction: true,
                   );
                   if (result == OkCancelResult.ok) {
-                    Get.to(const EmailVerificationPage());
+                    Get.to(() => const EmailVerificationPage());
                   } else {}
                 },
                 margin: const EdgeInsets.symmetric(horizontal: 40),

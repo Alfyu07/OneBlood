@@ -62,7 +62,10 @@ class DonorListItem extends StatelessWidget {
                 ),
               ),
               Text(
-                request.date ?? "Null",
+                request.date != null
+                    ? DateFormat("dd MMMM y")
+                        .format(DateTime.parse(request.date!))
+                    : "Null",
                 style: blackTextStyle.copyWith(
                   fontSize: 10,
                 ),
@@ -96,7 +99,7 @@ class DonorListItem extends StatelessWidget {
                   width: 78,
                   height: 26,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(12),
                     color: pinkColor,
                   ),
                   child: Center(
