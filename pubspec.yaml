@@ -24,8 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   adaptive_dialog: ^1.0.1
+  cached_network_image: ^3.1.0
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
+  flutter_cache_manager: ^3.1.2
   get: ^4.1.4
   google_fonts: ^2.1.0
   intl: ^0.17.0

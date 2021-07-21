@@ -70,7 +70,7 @@ class _SignInPageState extends State<SignInPage> {
                   Get.to(() => const RegisterPage());
                 },
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
-                child: Text('Register', style: pinkTextStyle),
+                child: Text('Register', style: redTextStyle),
               ),
               const SizedBox(height: 40),
               buildCustomDivider(),

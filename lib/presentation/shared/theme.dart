@@ -2,8 +2,9 @@ part of 'shared.dart';
 
 double edge = 24;
 Color whiteColor = const Color(0xffFFFFFF);
-Color pinkColor = const Color(0xffF09898);
-Color bgColor = const Color(0xffEDEDED);
+Color mainColor = const Color(0xffC2272D);
+Color lightRedColor = const Color(0xffD5574F);
+Color bgColor = const Color(0xffF9F9F9);
 
 Color blackColor = const Color(0xff000000);
 Color grayColor = const Color(0xff808080);
@@ -24,8 +25,8 @@ TextStyle greyTextStyle = TextStyle(
   color: grayColor,
   fontWeight: FontWeight.w400,
 );
-TextStyle pinkTextStyle = TextStyle(
-  color: pinkColor,
+TextStyle redTextStyle = TextStyle(
+  color: mainColor,
   fontWeight: FontWeight.w400,
 );
 

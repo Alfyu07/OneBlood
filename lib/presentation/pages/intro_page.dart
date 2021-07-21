@@ -41,14 +41,14 @@ class IntroPage extends StatelessWidget {
           Get.offAll(const SignInPage());
         },
         dotsDecorator: DotsDecorator(
-          activeColor: pinkColor,
+          activeColor: mainColor,
           activeSize: const Size(20.0, 10.0),
         ),
         showSkipButton: true,
         skip: const Text("Skip", style: TextStyle(fontWeight: FontWeight.w500)),
         skipColor: blackColor.withOpacity(0.8),
-        doneColor: pinkColor,
-        nextColor: pinkColor,
+        doneColor: mainColor,
+        nextColor: mainColor,
       ),
     );
   }

@@ -19,11 +19,11 @@ class CustomSecondaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12),
           ),
-          side: BorderSide(color: pinkColor),
+          side: BorderSide(color: mainColor),
           primary: Colors.white,
-          onPrimary: pinkColor,
+          onPrimary: mainColor,
         ),
         child: child,
       ),

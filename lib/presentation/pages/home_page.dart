@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                   child: CupertinoSearchTextField(
                     placeholder: 'Pencarian',
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(12),
                       color: bgColor,
                     ),
                     prefixInsets: const EdgeInsets.only(left: 10),
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
                     width: 41,
                     margin: const EdgeInsets.only(left: 16),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(12),
                       color: bgColor,
                     ),
                     child: const Icon(Icons.sort),

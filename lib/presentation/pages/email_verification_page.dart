@@ -54,8 +54,8 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
                     FilteringTextInputFormatter.digitsOnly,
                   ],
                   pinTheme: PinTheme(
-                    activeColor: pinkColor,
-                    selectedColor: pinkColor,
+                    activeColor: mainColor,
+                    selectedColor: mainColor,
                     inactiveColor: Colors.black.withOpacity(0.5),
                     borderWidth: 2,
                     shape: PinCodeFieldShape.underline,
@@ -69,7 +69,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
                 TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    primary: pinkColor,
+                    primary: mainColor,
                   ),
                   child: const Text('Kirim ulang code'),
                 ),

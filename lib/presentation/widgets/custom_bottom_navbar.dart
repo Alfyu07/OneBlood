@@ -28,12 +28,12 @@ class CustomBottomNavbar extends StatelessWidget {
               children: [
                 Icon(Icons.home_outlined,
                     color: selectedIndex == 0
-                        ? pinkColor
+                        ? mainColor
                         : const Color(0xffE5E5E5)),
                 Text(
                   'Home',
                   style: selectedIndex == 0
-                      ? pinkTextStyle.copyWith(fontSize: 12)
+                      ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
                 )
               ],
@@ -61,7 +61,7 @@ class CustomBottomNavbar extends StatelessWidget {
                 Text(
                   'Request',
                   style: selectedIndex == 1
-                      ? pinkTextStyle.copyWith(fontSize: 12)
+                      ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
                 )
               ],
@@ -90,7 +90,7 @@ class CustomBottomNavbar extends StatelessWidget {
                 Text(
                   'Request',
                   style: selectedIndex == 2
-                      ? pinkTextStyle.copyWith(fontSize: 12)
+                      ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
                 )
               ],
@@ -118,7 +118,7 @@ class CustomBottomNavbar extends StatelessWidget {
                 Text(
                   'Donor',
                   style: selectedIndex == 3
-                      ? pinkTextStyle.copyWith(fontSize: 12)
+                      ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
                 )
               ],
@@ -146,7 +146,7 @@ class CustomBottomNavbar extends StatelessWidget {
                 Text(
                   'Profile',
                   style: selectedIndex == 4
-                      ? pinkTextStyle.copyWith(fontSize: 12)
+                      ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
                 )
               ],

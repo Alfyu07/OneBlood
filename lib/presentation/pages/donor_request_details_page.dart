@@ -6,11 +6,11 @@ class DonorRequestDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: pinkColor,
+      backgroundColor: lightRedColor,
       appBar: AppBar(
-        backgroundColor: pinkColor,
+        backgroundColor: lightRedColor,
         elevation: 0,
         leading: IconButton(
           onPressed: () => Get.back(),
@@ -29,63 +29,207 @@ class DonorRequestDetail extends StatelessWidget {
                 topRight: Radius.circular(40),
               ),
             ),
-            child: ListView(
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 30),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        margin: EdgeInsets.only(right: edge),
-                        width: 43,
-                        height: 38,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: ListView(
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 30),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          margin: EdgeInsets.only(right: edge),
+                          width: 43,
+                          height: 38,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFBE7E7),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: Image.asset('assets/chat_icon.png',
+                                width: 24, height: 20),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: edge),
+                        child: Text(
+                          'Deskripsi',
+                          style: blackTextStyle.copyWith(fontSize: 18),
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: edge),
+                        child: Text(
+                          'Saya sedang mengalami  anemia.  Sudah satu minggu di rumah sakit. Saya butuh bantuan darah. Mohon bantuannya teman-teman. Terima kasih.',
+                          style: blackTextStyle.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      buildBloodInfo(context),
+                      const SizedBox(height: 20),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: edge),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: edge, vertical: edge),
                         decoration: BoxDecoration(
-                          color: const Color(0xffFBE7E7),
-                          borderRadius: BorderRadius.circular(8),
+                          color: bgColor,
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Center(
-                          child: Image.asset('assets/chat_icon.png',
-                              width: 24, height: 20),
+                        child: Column(
+                          children: [
+                            Row(children: [
+                              Center(
+                                child:
+                                    Icon(Icons.account_box, color: mainColor),
+                              ),
+                              const SizedBox(width: 16),
+                              Text(
+                                request.resipienName ?? "null",
+                                style: blackTextStyle.copyWith(fontSize: 12),
+                              )
+                            ]),
+                            const SizedBox(height: 12),
+                            Row(children: [
+                              SizedBox(
+                                width: 24,
+                                child: Center(
+                                  child: Image.asset('assets/date_icon.png'),
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              Text(
+                                request.date != null
+                                    ? "${DateFormat("dd MMMM y").format(DateTime.parse(request.date!))} (dibutuhkan)"
+                                    : "Null",
+                                style: blackTextStyle.copyWith(fontSize: 12),
+                              )
+                            ]),
+                            const SizedBox(height: 12),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 24,
+                                  child: Center(
+                                    child: Image.asset(
+                                      'assets/icon_location.png',
+                                      width: 16,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 16),
+                                SizedBox(
+                                  width: 220,
+                                  child: Text(
+                                    request.location ?? "null",
+                                    style:
+                                        blackTextStyle.copyWith(fontSize: 12),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
                         ),
                       ),
+                      SizedBox(height: edge),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: 150,
+                                child: CustomSecondaryButton(
+                                    onPressed: () {},
+                                    child: Text('Lihat Lokasi')),
+                              ),
+                              SizedBox(
+                                width: 150,
+                                child: CustomPrimaryButton(
+                                    onPressed: () {}, child: Text('Donor')),
+                              ),
+                            ]),
+                      ),
+                      const SizedBox(height: 4),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Align(
+            alignment: const Alignment(0, -0.86),
+            child: Container(
+              width: 300,
+              height: 108,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 114,
+                    height: 108,
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: BackdropFilter(
+                            filter:
+                                ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                            child: Container(
+                              width: 114,
+                              height: 108,
+                              color: whiteColor.withOpacity(0.5),
+                            ),
+                          ),
+                        ),
+                        Center(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: SizedBox(
+                              height: 80,
+                              width: 77,
+                              child: Image.network(
+                                request.user!.picturePath ?? "null",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 8),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: edge),
-                      child: Text(
-                        'Deskripsi',
-                        style: blackTextStyle.copyWith(fontSize: 18),
-                      ),
+                  ),
+                  const SizedBox(width: 15),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Mediana Arofah',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          overflow: TextOverflow.clip,
+                        ),
+                        Text(
+                          '8 Jul 2021',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 3),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: edge),
-                      child: Text(
-                        'Saya sedang mengalami  anemia.  Sudah satu minggu di rumah sakit. Saya butuh bantuan darah. Mohon bantuannya teman-teman. Terima kasih.',
-                        style: blackTextStyle.copyWith(
-                            fontSize: 12, fontWeight: FontWeight.w300),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    buildBloodInfo(context),
-                    const SizedBox(height: 20),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: edge),
-                      padding: EdgeInsets.symmetric(horizontal: edge),
-                      decoration: BoxDecoration(
-                        color: bgColor,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Column(
-                        children: [],
-                      ),
-                    )
-                  ],
-                ),
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         ],

@@ -12,16 +12,23 @@ class DonorListItem extends StatelessWidget {
     return Container(
       height: 83,
       decoration: BoxDecoration(
-        color: whiteColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
+          color: whiteColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.08),
+              spreadRadius: 0,
+              blurRadius: 4,
+              offset: const Offset(4, 4), // changes position of shadow
+            ),
+          ]),
       child: Row(
         children: [
           Container(
             height: 83,
             width: 57,
             decoration: BoxDecoration(
-              color: pinkColor,
+              color: lightRedColor,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
@@ -39,14 +46,15 @@ class DonorListItem extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: NetworkImage(request.user!.picturePath!),
-                fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(25),
+            child: CachedNetworkImage(
+              imageUrl: request.user!.picturePath ?? "",
+              height: 40,
+              width: 40,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => Container(
+                color: Colors.black12,
               ),
             ),
           ),
@@ -100,7 +108,7 @@ class DonorListItem extends StatelessWidget {
                   height: 26,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: pinkColor,
+                    color: mainColor,
                   ),
                   child: Center(
                     child: Text(
