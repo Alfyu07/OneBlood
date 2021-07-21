@@ -86,8 +86,10 @@ class DonorRequestDetail extends StatelessWidget {
                           children: [
                             Row(children: [
                               Center(
-                                child:
-                                    Icon(Icons.account_box, color: mainColor),
+                                child: Icon(
+                                  Icons.account_box_outlined,
+                                  color: mainColor,
+                                ),
                               ),
                               const SizedBox(width: 16),
                               Text(
