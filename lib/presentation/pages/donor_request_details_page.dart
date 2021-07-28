@@ -149,12 +149,13 @@ class DonorRequestDetail extends StatelessWidget {
                                 width: 150,
                                 child: CustomSecondaryButton(
                                     onPressed: () {},
-                                    child: Text('Lihat Lokasi')),
+                                    child: const Text('Lihat Lokasi')),
                               ),
                               SizedBox(
                                 width: 150,
                                 child: CustomPrimaryButton(
-                                    onPressed: () {}, child: Text('Donor')),
+                                    onPressed: () {},
+                                    child: const Text('Donor')),
                               ),
                             ]),
                       ),

@@ -2,28 +2,32 @@ part of 'pages.dart';
 
 final List<PageViewModel> listIntroPageView = [
   PageViewModel(
-    title: "First Intro Page",
-    body:
-        "Here you can write the description of the page, to explain someting...",
+    title: "",
+    body: "Aksi kemanusiaan tertinggi\nadalah melakukan donor darah. ",
     image: Center(
       child: Image.asset("assets/intro1.png", height: 175.0),
     ),
+    decoration: const PageDecoration(
+        titlePadding: EdgeInsets.zero, imagePadding: EdgeInsets.only(top: 80)),
   ),
   PageViewModel(
-    title: "Second Intro Page",
+    title: "",
     body:
-        "Here you can write the description of the page, to explain someting...",
+        "Dengan melakukan donor darah kita dapat menolong orang-orang yang terkena musibah dan membantu menolong nyawa mereka agar terselamatkan.",
     image: Center(
       child: Image.asset("assets/intro2.png", height: 175.0),
     ),
+    decoration: const PageDecoration(
+        titlePadding: EdgeInsets.zero, imagePadding: EdgeInsets.only(top: 80)),
   ),
   PageViewModel(
-    title: "Third Intro Page",
-    body:
-        "Here you can write the description of the page, to explain someting...",
+    title: "",
+    body: "Mari membantu sesama dengan melakukan Donor Darah!",
     image: Center(
       child: Image.asset("assets/intro3.png", height: 175.0),
     ),
+    decoration: const PageDecoration(
+        titlePadding: EdgeInsets.zero, imagePadding: EdgeInsets.only(top: 80)),
   )
 ];
 

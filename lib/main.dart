@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oneblood/presentation/shared/shared.dart';
 import 'presentation/pages/pages.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: GoogleFonts.poppinsTextTheme(),
+        canvasColor: whiteColor,
       ),
       home: const IntroPage(),
     );

@@ -40,8 +40,8 @@ class _MainPageState extends State<MainPage> {
               const Center(
                 child: HomePage(),
               ),
-              Center(
-                child: Container(),
+              const Center(
+                child: RequestBlood(),
               ),
               Center(
                 child: Container(),

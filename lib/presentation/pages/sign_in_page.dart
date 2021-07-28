@@ -44,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: passwordObscure,
-                prefixIcon: const Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.security),
                 suffixIcon: IconButton(
                   onPressed: () =>
                       setState(() => passwordObscure = !passwordObscure),
@@ -59,7 +59,9 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(height: 12),
               // !Login Button
               CustomPrimaryButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const MainPage());
+                },
                 margin: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Text("Login", style: whiteTextStyle),
               ),

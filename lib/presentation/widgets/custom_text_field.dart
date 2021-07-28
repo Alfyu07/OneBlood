@@ -34,19 +34,19 @@ class CustomTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.black.withOpacity(0.2),
+              color: grayColor,
             ),
             borderRadius: BorderRadius.circular(8),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.black.withOpacity(0.2),
+              color: grayColor,
             ),
             borderRadius: BorderRadius.circular(8),
           ),
           hintText: hintText,
           hintStyle: TextStyle(
-            color: Colors.black.withOpacity(0.2),
+            color: grayColor,
           ),
           contentPadding:
               EdgeInsets.only(top: 20, left: (prefixIcon == null) ? 20 : 0),

@@ -86,17 +86,9 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
     controller.text = value;
     final Random random = Random();
     //TODO request ke Api
-    final bool valid = random.nextBool();
-    if (valid) {
-      Get.to(() => const MainPage());
-    } else {
-      ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Wrong Pin Number, Try Again'),
-        ),
-      );
-      return;
-    }
+
+    Get.to(() => const MainPage());
+
+    return;
   }
 }

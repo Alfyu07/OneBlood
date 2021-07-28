@@ -18,3 +18,5 @@ part 'email_verification_page.dart';
 part 'home_page.dart';
 part 'intro_page.dart';
 part 'donor_request_details_page.dart';
+part 'request_blood_page.dart';
+part 'second_request_blood_page.dart';
