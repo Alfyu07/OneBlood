@@ -1,4 +1,4 @@
-package com.example.oneblood
+package com.alfyu.oneblood
 
 import io.flutter.embedding.android.FlutterActivity
 
