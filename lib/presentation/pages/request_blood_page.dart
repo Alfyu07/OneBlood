@@ -11,6 +11,9 @@ class _RequestBloodState extends State<RequestBlood> {
   TextEditingController nameController = TextEditingController();
   TextEditingController nikController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
+  DateTime selectedDate = DateTime.now();
+  TextEditingController dateNeededController = TextEditingController();
+  TextEditingController bloodNeedsController = TextEditingController();
 
   static List<String> goldars = [
     'Golongan Darah',
@@ -32,7 +35,7 @@ class _RequestBloodState extends State<RequestBlood> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -66,20 +69,29 @@ class _RequestBloodState extends State<RequestBlood> {
                 ),
                 SizedBox(height: edge),
                 CustomTextField(
-                  controller: phoneController,
+                  controller: bloodNeedsController,
                   hintText: 'Jumlah Darah Yang Dibutuhkan',
                 ),
                 SizedBox(height: edge),
                 CustomTextField(
-                  controller: phoneController,
+                  controller: dateNeededController,
                   hintText: 'Tanggal Darah Dibutuhkan',
                   suffixIcon: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.date_range)),
+                      onPressed: () => _selectDate(context),
+                      icon: const Icon(Icons.date_range)),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 CustomSecondaryButton(
                     onPressed: () {
-                      Get.to(() => SecondRequestPage());
+                      final DonorRequest req = DonorRequest(
+                        id: 7,
+                        user: mockUser[0],
+                        bloodNeeds: int.parse(bloodNeedsController.text),
+                        date: DateFormat('yyyy-MM-dd').format(selectedDate),
+                        resipienBloodType: _goldarValue,
+                        resipienName: nameController.text,
+                      );
+                      Get.to(() => SecondRequestPage(request: req));
                     },
                     child: const Text('Selanjutnya')),
                 const SizedBox(height: 50)
@@ -89,5 +101,21 @@ class _RequestBloodState extends State<RequestBlood> {
         ),
       ),
     );
+  }
+
+  _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate, // Refer step 1
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2025),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        dateNeededController.text =
+            DateFormat('yyyy-MM-dd').format(selectedDate);
+      });
+    }
   }
 }

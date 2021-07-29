@@ -84,7 +84,6 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
 
   void onCompletedVerify(String value, TextEditingController controller) {
     controller.text = value;
-    final Random random = Random();
     //TODO request ke Api
 
     Get.to(() => const MainPage());

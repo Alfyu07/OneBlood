@@ -47,10 +47,10 @@ class _MainPageState extends State<MainPage> {
                 child: MapsPage(),
               ),
               Center(
-                child: Container(),
+                child: HistoryPage(),
               ),
               Center(
-                child: Container(),
+                child: ProfilePage(),
               ),
             ],
           )),

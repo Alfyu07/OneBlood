@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:ui';
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,3 +21,5 @@ part 'donor_request_details_page.dart';
 part 'request_blood_page.dart';
 part 'second_request_blood_page.dart';
 part 'maps_pages.dart';
+part 'history_page.dart';
+part 'profile_page.dart';

@@ -66,7 +66,7 @@ class DonorRequestDetail extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: edge),
                         child: Text(
-                          'Saya sedang mengalami  anemia.  Sudah satu minggu di rumah sakit. Saya butuh bantuan darah. Mohon bantuannya teman-teman. Terima kasih.',
+                          request.description ?? "-",
                           style: blackTextStyle.copyWith(
                               fontSize: 12, fontWeight: FontWeight.w300),
                         ),
@@ -148,13 +148,25 @@ class DonorRequestDetail extends StatelessWidget {
                               SizedBox(
                                 width: 150,
                                 child: CustomSecondaryButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.to(MainPage(initialPage: 2));
+                                    },
                                     child: const Text('Lihat Lokasi')),
                               ),
                               SizedBox(
                                 width: 150,
                                 child: CustomPrimaryButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      final Donor donor = Donor(
+                                        id: 8,
+                                        request: request,
+                                        user: mockUser[0],
+                                      );
+                                      mockDonor.add(donor);
+
+                                      Get.to(
+                                          () => const MainPage(initialPage: 3));
+                                    },
                                     child: const Text('Donor')),
                               ),
                             ]),
@@ -168,7 +180,7 @@ class DonorRequestDetail extends StatelessWidget {
           ),
           Align(
             alignment: const Alignment(0, -0.86),
-            child: Container(
+            child: SizedBox(
               width: 300,
               height: 108,
               child: Row(
@@ -214,7 +226,7 @@ class DonorRequestDetail extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Mediana Arofah',
+                          request.resipienName ?? "Null",
                           style: blackTextStyle.copyWith(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -222,7 +234,10 @@ class DonorRequestDetail extends StatelessWidget {
                           overflow: TextOverflow.clip,
                         ),
                         Text(
-                          '8 Jul 2021',
+                          request.date != null
+                              ? DateFormat("dd MMMM y")
+                                  .format(DateTime.parse(request.date!))
+                              : "Null",
                           style: blackTextStyle.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,

@@ -34,6 +34,30 @@ class DonorRequest extends Equatable {
         resipienBloodType: data['resipienBloodType'] as String,
       );
 
+  DonorRequest copyWith({
+    int? id,
+    User? user,
+    String? resipienName,
+    String? resipienBloodType,
+    String? description,
+    String? date,
+    int? bloodNeeds,
+    int? bloodFullfilled,
+    String? location,
+  }) {
+    return DonorRequest(
+      id: id ?? this.id,
+      user: user ?? this.user,
+      resipienName: resipienName ?? this.resipienName,
+      resipienBloodType: resipienBloodType ?? this.resipienBloodType,
+      date: date ?? this.date,
+      description: description ?? this.description,
+      bloodNeeds: bloodNeeds ?? this.bloodNeeds,
+      bloodFullfilled: bloodFullfilled ?? this.bloodFullfilled,
+      location: location ?? this.location,
+    );
+  }
+
   @override
   // TODO: implement props
   List<Object?> get props => [
@@ -57,7 +81,7 @@ final List<DonorRequest> mockDonorRequest = [
     bloodNeeds: 5,
     date: "2021-07-21",
     description: "Untuk pengobatan keluarga saya",
-    resipienName: "George",
+    resipienName: "Wahyu Alfandi",
     location: "RSUD Kota Mataram",
     resipienBloodType: "O+",
   ),
@@ -68,7 +92,7 @@ final List<DonorRequest> mockDonorRequest = [
     bloodNeeds: 9,
     date: "2021-07-22",
     description: "Untuk operasi",
-    resipienName: "Fany",
+    resipienName: "Zikry Ramadhan",
     location: "RSUD Kota Mataram",
     resipienBloodType: "A-",
   ),
@@ -79,7 +103,7 @@ final List<DonorRequest> mockDonorRequest = [
     bloodNeeds: 7,
     date: "2021-07-21",
     description: "Untuk operasi",
-    resipienName: "Walley",
+    resipienName: "Alidin",
     location: "RSUD Kota Mataram",
     resipienBloodType: "AB+",
   ),
@@ -90,7 +114,7 @@ final List<DonorRequest> mockDonorRequest = [
     bloodNeeds: 7,
     date: "2021-07-19",
     description: "Untuk operasi",
-    resipienName: "Flowery",
+    resipienName: "Fauziah",
     location: "RSUD Kota Mataram",
     resipienBloodType: "B+",
   ),

@@ -17,7 +17,6 @@ class DonorListItem extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.08),
-              spreadRadius: 0,
               blurRadius: 4,
               offset: const Offset(4, 4), // changes position of shadow
             ),
@@ -64,7 +63,7 @@ class DonorListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                request.user!.name ?? "Null",
+                request.resipienName ?? "Null",
                 style: blackTextStyle.copyWith(
                   fontWeight: FontWeight.w500,
                 ),

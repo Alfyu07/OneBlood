@@ -1,16 +1,19 @@
 part of 'pages.dart';
 
 class SecondRequestPage extends StatefulWidget {
-  const SecondRequestPage({Key? key}) : super(key: key);
+  final DonorRequest request;
+  const SecondRequestPage({Key? key, required this.request}) : super(key: key);
 
   @override
   _SecondRequestPageState createState() => _SecondRequestPageState();
 }
 
 class _SecondRequestPageState extends State<SecondRequestPage> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController nikController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
+  TextEditingController provinsiController = TextEditingController();
+  TextEditingController locationRawatContoller = TextEditingController();
+  TextEditingController cityContoller = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,32 +38,41 @@ class _SecondRequestPageState extends State<SecondRequestPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomTextField(
-                controller: phoneController,
+                controller: locationRawatContoller,
                 hintText: 'Lokasi Pasien Dirawat',
               ),
               SizedBox(height: edge),
               CustomTextField(
-                controller: phoneController,
+                controller: locationController,
                 hintText: 'Lokasi Donor Darah',
               ),
               SizedBox(height: edge),
               CustomTextField(
-                controller: phoneController,
+                controller: provinsiController,
                 hintText: 'Provinsi',
               ),
               SizedBox(height: edge),
               CustomTextField(
-                controller: phoneController,
+                controller: cityContoller,
                 hintText: 'Kabupaten/Kota',
               ),
               SizedBox(height: edge),
               CustomTextField(
-                controller: phoneController,
+                controller: descriptionController,
                 hintText: 'Keterangan',
               ),
               SizedBox(height: edge),
               CustomPrimaryButton(
-                  onPressed: () {}, child: const Text('Ajukan Permintaan'))
+                  onPressed: () {
+                    widget.request.copyWith(
+                      location: locationController.text,
+                      description: descriptionController.text,
+                    );
+                    print(widget.request);
+                    mockDonorRequest.add(widget.request);
+                    Get.to(() => const MainPage());
+                  },
+                  child: const Text('Ajukan Permintaan'))
             ],
           ),
         ),

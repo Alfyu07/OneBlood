@@ -111,12 +111,12 @@ class CustomBottomNavbar extends StatelessWidget {
                   height: 28,
                   child: Center(
                     child: selectedIndex == 3
-                        ? Image.asset('assets/donor_icon_active.png')
-                        : Image.asset('assets/donor_icon.png'),
+                        ? Image.asset('assets/riwayat_icon_active.png')
+                        : Image.asset('assets/riwayat_icon.png'),
                   ),
                 ),
                 Text(
-                  'Donor',
+                  'Riwayat',
                   style: selectedIndex == 3
                       ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),

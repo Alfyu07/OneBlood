@@ -121,7 +121,7 @@ final List<User> mockUser = [
     lat: -8.6098144,
     lng: 116.0993226,
     picturePath:
-        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+        "https://images.unsplash.com/photo-1603325725990-553457a327f4?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
   ),
   const User(
@@ -140,7 +140,7 @@ final List<User> mockUser = [
     lat: -8.6037,
     lng: 117.155,
     picturePath:
-        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+        "https://images.unsplash.com/photo-1627446775354-9025108586c0?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8dG93SlpGc2twR2d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
   ),
   const User(
@@ -178,7 +178,7 @@ final List<User> mockUser = [
     lat: -8.5983980,
     lng: 116.1191090,
     picturePath:
-        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+        "https://images.unsplash.com/photo-1592685787730-ab2585c650cd?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDd8dG93SlpGc2twR2d8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
   ),
   const User(
@@ -197,7 +197,7 @@ final List<User> mockUser = [
     lat: -8.5983986,
     lng: 116.1191093,
     picturePath:
-        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+        "https://images.unsplash.com/photo-1627298855952-b75008bae685?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE0fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
   )
 ];
