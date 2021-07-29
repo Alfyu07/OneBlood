@@ -44,7 +44,7 @@ class _MainPageState extends State<MainPage> {
                 child: RequestBlood(),
               ),
               Center(
-                child: Container(),
+                child: MapsPage(),
               ),
               Center(
                 child: Container(),

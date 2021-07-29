@@ -20,6 +20,8 @@ class User extends Equatable {
   final String? cityRegency;
   final String? province;
   final String? linkToAddress;
+  final double? lat;
+  final double? lng;
 
   const User({
     required this.id,
@@ -36,6 +38,8 @@ class User extends Equatable {
     this.cityRegency,
     this.province,
     this.linkToAddress,
+    this.lat,
+    this.lng,
   });
 
   factory User.fromJson(Map<String, dynamic> data) => User(
@@ -52,6 +56,8 @@ class User extends Equatable {
         cityRegency: data['city_regency'] as String,
         province: data['province'] as String,
         linkToAddress: data['linkToAddress'] as String,
+        lat: data['lat'] as double,
+        lng: data['lng'] as double,
         userStatus: data['mode'] as String == 'donor'
             ? Status.available
             : Status.unAvailable,
@@ -74,6 +80,8 @@ class User extends Equatable {
         cityRegency,
         province,
         linkToAddress,
+        lat,
+        lng
       ];
 }
 
@@ -93,6 +101,8 @@ final List<User> mockUser = [
     userStatus: Status.available,
     picturePath:
         "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+    lat: -8.5953701,
+    lng: 117.1542,
     linkToAddress: "https://maps.google.com/?ll=-8.6033679,116.1544142",
   ),
   const User(
@@ -108,6 +118,8 @@ final List<User> mockUser = [
     kecamatan: "Sandubaya",
     province: "Nusa Tenggara Barat",
     userStatus: Status.available,
+    lat: -8.6098144,
+    lng: 116.0993226,
     picturePath:
         "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
@@ -125,6 +137,8 @@ final List<User> mockUser = [
     kecamatan: "Rasabou",
     province: "Nusa Tenggara Barat",
     userStatus: Status.available,
+    lat: -8.6037,
+    lng: 117.155,
     picturePath:
         "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
@@ -134,7 +148,7 @@ final List<User> mockUser = [
     username: "fauzyah",
     name: "Salman Alfarisi",
     phoneNumber: "08123456789",
-    address: "Kecamatan",
+    address: "Kekalik",
     bloodType: "A+",
     cityRegency: "Lombok Barat",
     donorAmount: "25",
@@ -142,6 +156,46 @@ final List<User> mockUser = [
     kecamatan: "Gunung Sari",
     province: "Nusa Tenggara Barat",
     userStatus: Status.available,
+    lat: -8.5983976,
+    lng: 116.1191073,
+    picturePath:
+        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+    linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
+  ),
+  const User(
+    id: 5,
+    username: "fauzyah",
+    name: "Virda",
+    phoneNumber: "08123456789",
+    address: "Kekalik",
+    bloodType: "A+",
+    cityRegency: "Lombok Barat",
+    donorAmount: "25",
+    email: "farachim@gmail.com",
+    kecamatan: "Gunung Sari",
+    province: "Nusa Tenggara Barat",
+    userStatus: Status.available,
+    lat: -8.5983980,
+    lng: 116.1191090,
+    picturePath:
+        "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
+    linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",
+  ),
+  const User(
+    id: 6,
+    username: "s_ti",
+    name: "Siti Rahmi",
+    phoneNumber: "08123456789",
+    address: "Kekalik",
+    bloodType: "A+",
+    cityRegency: "Lombok Barat",
+    donorAmount: "25",
+    email: "farachim@gmail.com",
+    kecamatan: "Gunung Sari",
+    province: "Nusa Tenggara Barat",
+    userStatus: Status.available,
+    lat: -8.5983986,
+    lng: 116.1191093,
     picturePath:
         "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80",
     linkToAddress: "https://maps.google.com/?ll=-8.6062512,116.1113527,17z",

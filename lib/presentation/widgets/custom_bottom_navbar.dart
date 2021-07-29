@@ -59,7 +59,7 @@ class CustomBottomNavbar extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Request',
+                  'Permintaan',
                   style: selectedIndex == 1
                       ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
@@ -88,7 +88,7 @@ class CustomBottomNavbar extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Request',
+                  'Pemetaan',
                   style: selectedIndex == 2
                       ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
@@ -144,7 +144,7 @@ class CustomBottomNavbar extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Profile',
+                  'Profil',
                   style: selectedIndex == 4
                       ? redTextStyle.copyWith(fontSize: 12)
                       : greyTextStyle.copyWith(fontSize: 10),
